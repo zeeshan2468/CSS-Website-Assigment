@@ -449,16 +449,50 @@ body {
   cursor: pointer;
 }
     </style>
-    <script>
-  (function(){
-    document['addEventListener']('contextmenu',function(e){e['preventDefault']();});
-    document['addEventListener']('keydown',function(e){
-      if(e['key']==='F12'||(e['ctrlKey']&&e['shiftKey']&&(e['key']==='I'||e['key']==='J'))||e['ctrlKey']&&e['key']==='u'){
-        e['preventDefault']();
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Website</title>
+</head>
+<body>
+
+  <!-- Your website content goes here -->
+
+  <!-- Paste the protection script here -->
+  <script>
+    // Disable Right Click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      alert("Right-click is disabled.");
+    });
+
+    // Disable specific keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+      // F12
+      if (e.key === "F12") {
+        e.preventDefault();
+      }
+
+      // Ctrl+Shift+I (Inspect), Ctrl+Shift+J (Console), Ctrl+U (View Source), Ctrl+S (Save)
+      if (
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+        (e.ctrlKey && (e.key === 'U' || e.key === 'S'))
+      ) {
+        e.preventDefault();
       }
     });
-  })();
-</script>
+
+    // Block DevTools via resize detection (optional, for extra layer)
+    setInterval(function () {
+      if (window.outerWidth - window.innerWidth > 100 || window.outerHeight - window.innerHeight > 100) {
+        document.body.innerHTML = "<h1 style='color:red;text-align:center;margin-top:20%'>Developer Tools are not allowed.</h1>";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
+
 </head>
 <body style="background-color: #fdfdfd;">
     <nav class="navbar">
