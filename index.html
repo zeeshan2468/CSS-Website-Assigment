@@ -733,25 +733,17 @@ body {
 
   <div class="copyright">
     Copyright ©2025 All rights reserved | This template is made with by <span class="highlight">Colorlib</span>
-  </div>
-    <script>
-  // Disable Right Click
+  </div><script>
+  // Disable right-click
   document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
-    alert("Right-click is disabled.");
   });
 
-  // Disable specific keyboard shortcuts
+  // Disable copy, save, view source, select all and F12
   document.addEventListener('keydown', function(e) {
-    // F12
-    if (e.key === "F12") {
-      e.preventDefault();
-    }
-
-    // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S
     if (
-      (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
-      (e.ctrlKey && (e.key === 'U' || e.key === 'S'))
+      e.key === "F12" || 
+      (e.ctrlKey && ['c', 'u', 's', 'a'].includes(e.key.toLowerCase()))
     ) {
       e.preventDefault();
     }
