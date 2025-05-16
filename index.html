@@ -449,32 +449,6 @@ body {
   cursor: pointer;
 }
     </style>
-    <!DOCTYPE html>
- <script>
-  // Disable Right Click
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    alert("Right-click is disabled.");
-  });
-
-  // Disable specific keyboard shortcuts
-  document.addEventListener('keydown', function(e) {
-    // F12
-    if (e.key === "F12") {
-      e.preventDefault();
-    }
-
-    // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S
-    if (
-      (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
-      (e.ctrlKey && (e.key === 'U' || e.key === 'S'))
-    ) {
-      e.preventDefault();
-    }
-  });
-
-  // ⚠️ Removed the "resize detection" because it can break your website
-</script>
 </head>
 <body style="background-color: #fdfdfd;">
     <nav class="navbar">
@@ -760,5 +734,28 @@ body {
   <div class="copyright">
     Copyright ©2025 All rights reserved | This template is made with by <span class="highlight">Colorlib</span>
   </div>
+    <script>
+  // Disable Right Click
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    alert("Right-click is disabled.");
+  });
+
+  // Disable specific keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.key === "F12") {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S
+    if (
+      (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+      (e.ctrlKey && (e.key === 'U' || e.key === 'S'))
+    ) {
+      e.preventDefault();
+    }
+  });
+</script>
 </body>
 </html>
